@@ -9,8 +9,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
+import org.openqa.selenium.WebDriver;
 
 import util.HtmlUnitUtil;
+import util.SeleniumUtil;
 import weiboread.PropertiesUtil;
 
 import com.gargoylesoftware.htmlunit.WebClient;
@@ -58,7 +60,9 @@ public class WeiboReadExecute {
 				webClient =  HtmlUnitUtil.create();
 					try{
 						System.out.println(" url "+u+" 刷》》》》》》》》》》》》》》》");
-						HtmlPage htmlPage = webClient.getPage(u);
+						//HtmlPage htmlPage = webClient.getPage(u);
+						WebDriver webDriver = SeleniumUtil.initChromeDriver();
+						webDriver.get(u); 
 						//String ps = htmlPage.asXml();
 						//System.out.println(ps);
 						Thread.sleep(2000+(new Random().nextInt(2000)));
