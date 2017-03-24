@@ -53,15 +53,16 @@ public class WeiboReadExecute {
 		}
 	}
 	
+	static 	WebDriver webDriver = SeleniumUtil.initChromeDriver();
+	
 	public static void execteAdsl(){
 		for (final String u:weiboUrlList) {
 			WebClient webClient = null;
 			try {
-				webClient =  HtmlUnitUtil.create();
+				//webClient =  HtmlUnitUtil.create();
 					try{
 						System.out.println(" url "+u+" 刷》》》》》》》》》》》》》》》");
 						//HtmlPage htmlPage = webClient.getPage(u);
-						WebDriver webDriver = SeleniumUtil.initChromeDriver();
 						webDriver.get(u); 
 						//String ps = htmlPage.asXml();
 						//System.out.println(ps);
