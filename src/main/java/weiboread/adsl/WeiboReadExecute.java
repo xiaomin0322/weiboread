@@ -53,9 +53,10 @@ public class WeiboReadExecute {
 		}
 	}
 	
-	static 	WebDriver webDriver = SeleniumUtil.initChromeDriver();
+	//static 	WebDriver webDriver = SeleniumUtil.initChromeDriver();
 	
 	public static void execteAdsl(){
+	 	WebDriver webDriver = SeleniumUtil.initChromeDriver();
 		for (final String u:weiboUrlList) {
 			WebClient webClient = null;
 			try {
@@ -78,6 +79,7 @@ public class WeiboReadExecute {
 				}
 			}
 		}
+		webDriver.close();
 	}
 	
 }
