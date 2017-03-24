@@ -36,11 +36,12 @@ public class WeiboReadExecute {
 	public static void main(String[] args) {
 		while(true){
 			try{
+				Thread.sleep(3000);
 				boolean flag = ConnectNetWork.cutAdsl("宽带连接");  
 				if(flag){
 					Thread.sleep(2000);
 					if(ConnectNetWork.connAdsl("宽带连接",adslUser,adslPwd)){
-						Thread.sleep(2000);
+						Thread.sleep(3000);
 						execteAdsl();
 					}
 				}
